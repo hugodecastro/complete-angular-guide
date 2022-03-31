@@ -4,6 +4,7 @@ node_modules/
 .vscode/
 .browserslistrc
 .editorconfig
+.angular/
 angular.json
 karma.conf.js
 package.json
