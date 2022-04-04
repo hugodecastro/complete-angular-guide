@@ -2,15 +2,19 @@
     <div class="col-xs-12">
         <p>Add New Server Or Blueprint</p>
         <label for="serverName">Server Name</label>
-        <input type="text" class="form-control" id="serverName" [(ngModel)]="newServerName">
+        <input 
+            type="text" 
+            class="form-control" 
+            id="serverName" 
+            #serverNameInput>
         <label for="serverContent">Server Content</label>
         <input type="text" class="form-control" id="serverContent" [(ngModel)]="newServerContent">
         <br>
         <button 
             class="btn btn-primary"
-            (click)="onAddServer()">Add Server</button>
+            (click)="onAddServer(serverNameInput)">Add Server</button>
         <button 
             class="btn btn-primary"
-            (click)="onAddBlueprint()">Add Blueprint</button>
+            (click)="onAddBlueprint(serverNameInput)">Add Blueprint</button>
     </div>
 </div>
