@@ -8,7 +8,10 @@
             id="serverName" 
             #serverNameInput>
         <label for="serverContent">Server Content</label>
-        <input type="text" class="form-control" id="serverContent" [(ngModel)]="newServerContent">
+        <input 
+            type="text" 
+            class="form-control" 
+            id="serverContent" #serverContentInput>
         <br>
         <button 
             class="btn btn-primary"
