@@ -2,6 +2,7 @@
 node_modules/
 .dockerignore
 .vscode/
+angular-env/
 .browserslistrc
 .editorconfig
 .angular/
