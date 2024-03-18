@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Install nodeenv
 
-nodeenv --node=16.14.2 --with-npm angular-env
+nodeenv --node=18.17.0 --with-npm angular-env
 
 . angular-env/bin/activate
 
