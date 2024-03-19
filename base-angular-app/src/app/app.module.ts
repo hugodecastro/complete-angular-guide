@@ -8,6 +8,7 @@ import { ServersComponent } from './servers/servers.component';
 @NgModule({
   declarations: [
     AppComponent,
+    // custom components inside AppComponent
     ServerComponent,
     ServersComponent
   ],
@@ -16,6 +17,8 @@ import { ServersComponent } from './servers/servers.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // initialize application
 })
+// all begins here
+// the bootstrap flow is: app.modules.ts -> app.component.ts -> app.component.html -> index.html
 export class AppModule { }
