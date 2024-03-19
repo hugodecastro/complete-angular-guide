@@ -1,3 +1,9 @@
+<label>Server Name</label>
+<!-- dollar sign event will be the data emitted on that event  -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
+<!-- works the same as above -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<p>{{ serverName }}</p>
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
