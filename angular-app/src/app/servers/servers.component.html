@@ -39,7 +39,8 @@
 <!-- ngIf else structure  -->
 
 <!-- ngFor is a structural directive -->
-<app-server *ngFor="let server of servers"></app-server>
+<!-- let i = index gives access to index inside loop  -->
+<app-server *ngFor="let server of servers; let i = index"></app-server>
 
 <!-- Angular 17 alternative syntax for loop -->
 <!-- @for (server of servers; track server.length) {
