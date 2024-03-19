@@ -1,2 +1,5 @@
 <!-- whatever you have between curly braces has to return a string or something that can be converted to string in the end -->
-<p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!-- ngStyle is a built-in directive to dynamically update the style -->
+<p [ngStyle]="{ backgroundColor: getColor() }">
+  Server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
