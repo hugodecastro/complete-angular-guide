@@ -10,15 +10,12 @@ import { ServersComponent } from './servers/servers.component';
     AppComponent,
     // custom components inside AppComponent
     ServerComponent,
-    ServersComponent
+    ServersComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent] // initialize application
+  bootstrap: [AppComponent], // initialize application
 })
 // all begins here
 // the bootstrap flow is: app.modules.ts -> app.component.ts -> app.component.html -> index.html
-export class AppModule { }
+export class AppModule {}
