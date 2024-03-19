@@ -38,5 +38,10 @@
 
 <!-- ngIf else structure  -->
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- ngFor is a structural directive -->
+<app-server *ngFor="let server of servers"></app-server>
+
+<!-- Angular 17 alternative syntax for loop -->
+<!-- @for (server of servers; track server.length) {
+  <app-server></app-server>
+} -->
