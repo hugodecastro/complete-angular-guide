@@ -1,4 +1,12 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
 <!-- square brackets indicates to angular that we are using property binding -->
+<!-- parenthesis indicates to angular that we are using event binding  -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
