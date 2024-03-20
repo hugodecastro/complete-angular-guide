@@ -19,7 +19,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'base-angular-app app is running!'
+      'angular-app app is running!'
     );
   });
 });
