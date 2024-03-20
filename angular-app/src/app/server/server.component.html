@@ -1,0 +1,9 @@
+<!-- whatever you have between curly braces has to return a string or something that can be converted to string in the end -->
+<!-- ngStyle is a built-in directive to dynamically update the style -->
+<!-- ngClass only adds an atribute if the condition is true  -->
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  Server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
