@@ -13,22 +13,21 @@ export class CockpitComponent implements OnInit {
   // @Output allows an input to work as alias to the property
   @Output('bpCreated') blueprintCreated: EventEmitter<Server> =
     new EventEmitter<Server>();
-  newServerName: string = '';
+  // newServerName: string = '';
   newServerContent: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onAddServer(): void {
-    this.serverCreated.emit(
-      new Server(this.newServerName, this.newServerContent)
-    ); // emits the event
+  onAddServer(nameInput: HTMLInputElement): void {
+    // value is a input property, will not work for all elements
+    this.serverCreated.emit(new Server(nameInput.value, this.newServerContent)); // emits the event
   }
 
-  onAddBlueprint(): void {
+  onAddBlueprint(nameInput: HTMLInputElement): void {
     this.blueprintCreated.emit(
-      new Server(this.newServerName, this.newServerContent)
+      new Server(nameInput.value, this.newServerContent)
     );
   }
 }
