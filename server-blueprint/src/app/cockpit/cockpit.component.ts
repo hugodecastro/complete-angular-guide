@@ -8,9 +8,11 @@ import { Server } from '../shared/server.model';
 })
 export class CockpitComponent implements OnInit {
   // EventEmitter turns properties into events that can be emitted, allowing us to emit our own events
-  @Output() serverCreated = new EventEmitter<Server>();
+  @Output() serverCreated: EventEmitter<Server> = new EventEmitter<Server>();
   // @Output() makes the property listenable to parent component
-  @Output() blueprintCreated = new EventEmitter<Server>();
+  // @Output allows an input to work as alias to the property
+  @Output('bpCreated') blueprintCreated: EventEmitter<Server> =
+    new EventEmitter<Server>();
   newServerName: string = '';
   newServerContent: string = '';
 
