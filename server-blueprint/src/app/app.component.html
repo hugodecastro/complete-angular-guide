@@ -1,5 +1,9 @@
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <!-- $event allows the event bingind to pass data to the component  -->
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
   <hr />
   <div class="row">
     <div class="col-xs-12">

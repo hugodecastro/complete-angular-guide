@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cockpit.component.css'],
 })
 export class CockpitComponent implements OnInit {
+  // EventEmitter turns properties into events that can be emitted, allowing us to emit our own events
+  @Output() serverCreated = new EventEmitter<{
+    serverName: string;
+    serverContent: string;
+  }>();
+  // @Output() makes the property listenable to parent component
+  @Output() blueprintCreated = new EventEmitter<{
+    serverName: string;
+    serverContent: string;
+  }>();
   newServerName: string = '';
   newServerContent: string = '';
 
@@ -14,18 +24,16 @@ export class CockpitComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddServer(): void {
-    // this.serverElements.push({
-    //   type: 'server',
-    //   name: this.newServerName,
-    //   content: this.newServerContent,
-    // });
+    this.serverCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent,
+    }); // emits the event
   }
 
   onAddBlueprint(): void {
-    // this.serverElements.push({
-    //   type: 'blueprint',
-    //   name: this.newServerName,
-    //   content: this.newServerContent,
-    // });
+    this.blueprintCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent,
+    });
   }
 }
