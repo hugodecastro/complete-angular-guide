@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ServerElementComponent implements OnInit {
   //by default all properties can be only accessed by its own class
   //@Input() exposes a property to its parent component
-  @Input() element: { type: string; name: string; content: string };
+  // @Input allows an input to work as alias to the property
+  @Input('srvElement') element: { type: string; name: string; content: string };
 
   ngOnInit(): void {}
 }
