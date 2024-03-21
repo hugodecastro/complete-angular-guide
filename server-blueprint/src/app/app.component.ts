@@ -14,7 +14,6 @@ export class AppComponent {
     this.serverElements.push(
       new ServerElement('server', serverData.name, serverData.content)
     );
-    console.log(this.serverElements)
   }
 
   onBlueprintAdded(blueprintData: Server): void {
