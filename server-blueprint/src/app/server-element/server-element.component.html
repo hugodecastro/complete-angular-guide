@@ -1,11 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">{{ element.server.name }}</div>
   <div class="panel-body">
-    <p>
-      <strong *ngIf="element.type === 'server'" style="color: red">{{
-        element.server.content
-      }}</strong>
-      <em *ngIf="element.type === 'blueprint'">{{ element.server.content }}</em>
-    </p>
+    <!-- ng-content serves as a hook to tell angular where to add any content  -->
+    <ng-content></ng-content>
   </div>
 </div>
