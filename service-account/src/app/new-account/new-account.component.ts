@@ -7,7 +7,13 @@ import { LoggingService } from '../services/logging.service';
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
   // provide tells angular how to create the service
+  providers: [LoggingService],
+  /*
   providers: [LoggingService, AccountService],
+  by assigning the provider in the child component, a new instance is created (separated from the parent component)
+  with this, all changes in the child component service instance won't affect the parent one
+  to fix this behavior, we need to remove from provider list and only keep the reference in the constructor
+  */
 })
 export class NewAccountComponent {
   // an service is not used by instantiating an object (although it would work),
