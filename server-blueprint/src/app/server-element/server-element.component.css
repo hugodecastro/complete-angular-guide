@@ -1,0 +1,5 @@
+/* angular gives a unique attribute identifier to each component which is applyed in all of its elements, 
+ that's why the style is not applyed to all tags in DOM (shadow DOM / view encapsulation)*/
+p {
+  color: blue;
+}
