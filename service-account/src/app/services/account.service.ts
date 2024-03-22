@@ -2,7 +2,9 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Account } from '../shared/account.model';
 import { LoggingService } from './logging.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root', // it tells angular that the service can be loaded lazily behind the scenes)
+})
 export class AccountService {
   accounts: Account[] = [
     new Account('Master Account', 'active'),
