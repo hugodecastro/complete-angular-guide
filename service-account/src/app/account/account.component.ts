@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
-import { AccountService } from '../account.service';
-import { LoggingService } from '../logging.service';
+import { AccountService } from '../services/account.service';
+import { LoggingService } from '../services/logging.service';
 
 @Component({
   selector: 'app-account',
