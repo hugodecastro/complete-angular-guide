@@ -1,24 +1,17 @@
+import { Account } from '../shared/account.model';
+
 export class AccountService {
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active',
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive',
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown',
-    },
+  accounts: Account[] = [
+    new Account('Master Account', 'active'),
+    new Account('Test Account', 'inactive'),
+    new Account('Hidden Account', 'unknown'),
   ];
 
-  addAccount(name: string, status: string) {
-    this.accounts.push({ name: name, status: status });
+  addAccount(name: string, status: string): void {
+    this.accounts.push(new Account(name, status));
   }
 
-  updateStatus(id: number, newStatus: string) {
+  updateStatus(id: number, newStatus: string): void {
     this.accounts[id].status = newStatus;
   }
 }
