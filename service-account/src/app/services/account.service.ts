@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Account } from '../shared/account.model';
 import { LoggingService } from './logging.service';
 
@@ -9,6 +9,8 @@ export class AccountService {
     new Account('Test Account', 'inactive'),
     new Account('Hidden Account', 'unknown'),
   ];
+
+  statusUpdated = new EventEmitter<string>();
 
   constructor(private loggingService: LoggingService) {} // since is provided in app.module than can be used anywhere
 
