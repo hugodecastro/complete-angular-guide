@@ -5,7 +5,7 @@ import { Ingredient } from '../shared/ingredient.model';
   providedIn: 'root',
 })
 export class ShoppingListService {
-  ingredientChanged: EventEmitter<Ingredient[]> = new EventEmitter<
+  ingredientsChanged: EventEmitter<Ingredient[]> = new EventEmitter<
     Ingredient[]
   >();
   private ingredients: Ingredient[] = [
@@ -21,6 +21,11 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient): void {
     this.ingredients.push(ingredient); // at this point we are pushing to the copy, not to the original
-    this.ingredientChanged.emit(this.ingredients.slice()); // inform the change on ingredient
+    this.ingredientsChanged.emit(this.ingredients.slice()); // inform the change on ingredient
+  }
+
+  addIngredients(ingredients: Ingredient[]): void {
+    this.ingredients.push(...ingredients); // spread the ingredients list
+    this.ingredientsChanged.emit(this.ingredients.slice());
   }
 }
