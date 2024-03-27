@@ -1,7 +1,8 @@
+/* whatever style we define is applyed only to the component it belongs to, not to the hole document */
 .container {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 p {
-    color: blue;
+  color: blue;
 }

@@ -1,34 +1,24 @@
 import { Component } from '@angular/core';
+import { Server } from './shared/server.model';
+import { ServerElement } from './shared/serverElement.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!'}];
+  serverElements: ServerElement[] = [];
 
-  onServerAdded(serverData: {serverName: string, serverContent: string}) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
+  onServerAdded(serverData: Server): void {
+    this.serverElements.push(
+      new ServerElement('server', serverData.name, serverData.content)
+    );
   }
 
-  onBlueprintAdded(bluePrintData: {serverName: string, serverContent: string}) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: bluePrintData.serverName,
-      content: bluePrintData.serverContent
-    });
-  }
-
-  onChangeFirst() {
-    this.serverElements[0].name = 'Changed!';
-  }
-
-  onDestroyFirst() {
-    this.serverElements.splice(0, 1);
+  onBlueprintAdded(blueprintData: Server): void {
+    this.serverElements.push(
+      new ServerElement('blueprint', blueprintData.name, blueprintData.content)
+    );
   }
 }

@@ -1,13 +1,48 @@
 <label>Server Name</label>
-<input 
-    type="text"
-    class="form-control"
-    [(ngModel)]="serverName">
-<button 
-    class="btn btn-primary"
-    [disabled]="!allowNewServer"
-    (click)="onCreateServer()">Add Server
+<!-- dollar sign event will be the data emitted on that event  -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
+<!-- works the same as above -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!-- <p>{{ serverName }}</p> -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
 </button>
+<!-- square brackets indicates to angular that we are using property binding -->
+<!-- parenthesis indicates to angular that we are using event binding  -->
+
+<!-- ngIf is a structural directive, which means it changes the structure of the DOM (either add it or not)  -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+
+<!-- Angular 17 alternative syntax for conditional -->
+<!-- @if (serverCreated) {
+  <p>Server was created, server name is {{ serverName }}</p>
+} -->
+
 <!-- <p>{{ serverCreationStatus }}</p> -->
-<p *ngIf="serverCreated">Server was created. Server name is {{ serverName }}</p>
-<app-server *ngFor="let server of servers"></app-server>
+
+<!-- ngIf else structure  -->
+
+<!-- ng-template is a native angular directive  -->
+<!-- <p *ngIf="serverCreated; else noServer">
+  Server was created, server name is {{ serverName }}
+</p> -->
+
+<!-- # refers to local reference -->
+<!-- <ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template> -->
+
+<!-- ngIf else structure  -->
+
+<!-- ngFor is a structural directive -->
+<!-- let i = index gives access to index inside loop  -->
+<app-server *ngFor="let server of servers; let i = index"></app-server>
+
+<!-- Angular 17 alternative syntax for loop -->
+<!-- @for (server of servers; track server.length) {
+  <app-server></app-server>
+} -->
